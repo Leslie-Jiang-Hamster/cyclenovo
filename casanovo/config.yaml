@@ -10,7 +10,7 @@
 
 # Max absolute difference allowed with respect to observed precursor m/z.
 # Predictions outside the tolerance range are assigned a negative peptide score.
-precursor_mass_tol: 50  # ppm
+precursor_mass_tol: 50 # ppm
 # Isotopes to consider when comparing predicted and observed precursor m/z's.
 isotope_error_range: [0, 1]
 # The minimum length of predicted peptides.
@@ -23,7 +23,7 @@ n_beams: 1
 top_match: 1
 # The hardware accelerator to use. Must be one of:
 # "cpu", "gpu", "tpu", "ipu", "hpu", "mps", or "auto".
-accelerator: "auto"
+accelerator: 'auto'
 # The devices to use. Can be set to a positive number int, or the value -1 to
 # indicate all available devices should be used. If left empty, the appropriate
 # number will be automatically selected for based on the chosen accelerator.
@@ -46,7 +46,7 @@ tb_summarywriter:
 # this field empty saves none.
 save_top_k: 5
 # Path to saved checkpoints.
-model_save_folder_path: ""
+model_save_folder_path: '/home/dkjiang/model'
 # Model validation and checkpointing frequency in training steps.
 val_check_interval: 50_000
 
@@ -60,7 +60,7 @@ max_mz: 2500.0
 # Min peak intensity allowed, less intense peaks are discarded.
 min_intensity: 0.01
 # Max absolute m/z difference allowed when removing the precursor peak.
-remove_precursor_tol: 2.0  # Da
+remove_precursor_tol: 2.0 # Da
 # Max precursor charge allowed, spectra with larger charge are skipped.
 max_charge: 10
 
@@ -104,32 +104,32 @@ calculate_precision: False
 
 # AMINO ACID AND MODIFICATION VOCABULARY
 residues:
-  "G": 57.021464
-  "A": 71.037114
-  "S": 87.032028
-  "P": 97.052764
-  "V": 99.068414
-  "T": 101.047670
-  "C+57.021": 160.030649 # 103.009185 + 57.021464
-  "L": 113.084064
-  "I": 113.084064
-  "N": 114.042927
-  "D": 115.026943
-  "Q": 128.058578
-  "K": 128.094963
-  "E": 129.042593
-  "M": 131.040485
-  "H": 137.058912
-  "F": 147.068414
-  "R": 156.101111
-  "Y": 163.063329
-  "W": 186.079313
+  'G': 57.021464
+  'A': 71.037114
+  'S': 87.032028
+  'P': 97.052764
+  'V': 99.068414
+  'T': 101.047670
+  'C+57.021': 160.030649 # 103.009185 + 57.021464
+  'L': 113.084064
+  'I': 113.084064
+  'N': 114.042927
+  'D': 115.026943
+  'Q': 128.058578
+  'K': 128.094963
+  'E': 129.042593
+  'M': 131.040485
+  'H': 137.058912
+  'F': 147.068414
+  'R': 156.101111
+  'Y': 163.063329
+  'W': 186.079313
   # Amino acid modifications.
-  "M+15.995": 147.035400    # Met oxidation:   131.040485 + 15.994915
-  "N+0.984": 115.026943     # Asn deamidation: 114.042927 +  0.984016
-  "Q+0.984": 129.042594     # Gln deamidation: 128.058578 +  0.984016
+  'M+15.995': 147.035400 # Met oxidation:   131.040485 + 15.994915
+  'N+0.984': 115.026943 # Asn deamidation: 114.042927 +  0.984016
+  'Q+0.984': 129.042594 # Gln deamidation: 128.058578 +  0.984016
   # N-terminal modifications.
-  "+42.011": 42.010565      # Acetylation
-  "+43.006": 43.005814      # Carbamylation
-  "-17.027": -17.026549     # NH3 loss
-  "+43.006-17.027": 25.980265      # Carbamylation and NH3 loss
+  '+42.011': 42.010565 # Acetylation
+  '+43.006': 43.005814 # Carbamylation
+  '-17.027': -17.026549 # NH3 loss
+  '+43.006-17.027': 25.980265 # Carbamylation and NH3 loss
