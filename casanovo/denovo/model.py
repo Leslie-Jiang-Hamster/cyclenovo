@@ -212,7 +212,7 @@ class Spec2Pep(pl.LightningModule, ModelMixin):
             spectra.to(self.encoder.device),
             precursors.to(self.decoder.device),
             None,
-            3
+            1
         )
 
     def beam_search_decode(
@@ -243,6 +243,7 @@ class Spec2Pep(pl.LightningModule, ModelMixin):
             peptide predictions consists of a tuple with the peptide score,
             the amino acid scores, and the predicted peptide sequence.
         """
+        assert loops >= 0
         memories, mem_masks = self.encoder(spectra, None)
 
         # Sizes.

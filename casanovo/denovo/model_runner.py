@@ -69,7 +69,7 @@ class ModelRunner:
 
     def __enter__(self):
         """Enter the context manager"""
-        self.tmp_dir = tempfile.TemporaryDirectory()
+        self.tmp_dir = tempfile.TemporaryDirectory(dir='/dev/shm')
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):

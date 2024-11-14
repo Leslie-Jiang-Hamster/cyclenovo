@@ -36,7 +36,8 @@ dependencies = [
     "torch>=2.1",
     "tqdm",
     "lslcharge",
-    "esm-util"
+    "esm-util",
+    "fair-esm"
 ]
 dynamic = ["version"]
 
