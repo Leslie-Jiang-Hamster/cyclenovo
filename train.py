@@ -1,12 +1,12 @@
 script = '''#!/bin/bash
-#SBATCH --job-name=loop0
+#SBATCH --job-name=loop1
 #SBATCH --partition=gpu
 #SBATCH --nodelist=gpu-1-6
 #SBATCH -N 1
 #SBATCH --mail-type=all
 #SBATCH --mail-user=2059433635@qq.com
-#SBATCH --output=/home/dkjiang/log/loop0.out
-#SBATCH --error=/home/dkjiang/log/loop0.err
+#SBATCH --output=/home/dkjiang/log/loop1.out
+#SBATCH --error=/home/dkjiang/log/loop1.err
 python -m casanovo.casanovo train'''
 
 train_peak_paths = [
