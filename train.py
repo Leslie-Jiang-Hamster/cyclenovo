@@ -7,6 +7,7 @@ script = '''#!/bin/bash
 #SBATCH --mail-user=2059433635@qq.com
 #SBATCH --output=/home/dkjiang/log/loop1.out
 #SBATCH --error=/home/dkjiang/log/loop1.err
+#SBATCH --gres=gpu:1
 python -m casanovo.casanovo train'''
 
 train_peak_paths = [
