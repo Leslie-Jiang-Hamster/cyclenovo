@@ -243,6 +243,8 @@ class Spec2Pep(pl.LightningModule, ModelMixin):
             peptide predictions consists of a tuple with the peptide score,
             the amino acid scores, and the predicted peptide sequence.
         """
+        precursors_ = precursors
+
         assert loops >= 0
         memories, mem_masks = self.encoder(spectra, embeddings)
 
@@ -323,7 +325,8 @@ class Spec2Pep(pl.LightningModule, ModelMixin):
         intermediate = esm_util.ESMUtil().load_data(intermediate).get_sequence_representations()
         intermediate = torch.stack(intermediate)
         assert isinstance(intermediate, torch.Tensor)
-        return self.beam_search_decode(spectra, precursors, intermediate, loops - 1)
+        # The precursors have been changed! Use backups.
+        return self.beam_search_decode(spectra, precursors_, intermediate, loops - 1)
 
     def _finish_beams(
         self,

@@ -9,4 +9,4 @@
 #SBATCH --error=/home/dkjiang/log/seq.err
 #SBATCH --gres=gpu:1
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-python -m casanovo.casanovo sequence -o loop1.mztab -m /home/dkjiang/model1/epoch=0-step=2000.ckpt loong.mgf
+python -m casanovo.casanovo sequence -o loop1.mztab -m /home/dkjiang/model1/epoch=0-step=2000.ckpt short.mgf
