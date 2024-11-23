@@ -244,7 +244,7 @@ class Spec2Pep(pl.LightningModule, ModelMixin):
             the amino acid scores, and the predicted peptide sequence.
         """
         assert loops >= 0
-        memories, mem_masks = self.encoder(spectra, None)
+        memories, mem_masks = self.encoder(spectra, embeddings)
 
         # Sizes.
         batch = spectra.shape[0]  # B
