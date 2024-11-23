@@ -8,4 +8,4 @@
 #SBATCH --output=/home/dkjiang/log/seq.out
 #SBATCH --error=/home/dkjiang/log/seq.err
 #SBATCH --gres=gpu:1
-python -m casanovo.casanovo sequence -o loop0.mztab -m /home/dkjiang/model0/model0.ckpt loong.mgf
+python -m casanovo.casanovo sequence -o loop1.mztab -m /home/dkjiang/model1/model1.ckpt loong.mgf
