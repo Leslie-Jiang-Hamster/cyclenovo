@@ -212,7 +212,7 @@ class Spec2Pep(pl.LightningModule, ModelMixin):
             spectra.to(self.encoder.device),
             precursors.to(self.decoder.device),
             None,
-            1
+            0
         )
 
     def beam_search_decode(
